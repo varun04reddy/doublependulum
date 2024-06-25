@@ -1,10 +1,6 @@
 
 # Double Pendulum - Study of Chaos
 
-## Equations of Motion
-
-The dynamics of the double pendulum can be described by the following equations:
-
 ### Angular Accelerations
 
 $$
@@ -51,11 +47,6 @@ $$
 \dot{\theta}_1 = 0, \quad \dot{\theta}_2 = 1
 $$
 
-## Visualization
-
-The pendulum's motion is visualized using Matplotlib, with traces to show the paths of the pendulum masses.
-
-## Important Concepts
 
 ### Pendulum Positions
 
@@ -77,8 +68,3 @@ $$
 y_2 = y_1 - l_2 \cos(\theta_2)
 $$
 
-### Trace Path
-
-The trace path of the second pendulum mass is recorded and displayed to show its trajectory over time.
-
-Save this README file as `README.md` in your project directory. It provides a clear and concise summary of the mathematical and physical principles behind the double pendulum project, including the equations of motion, numerical solution method, and visualization approach.
