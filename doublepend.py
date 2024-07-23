@@ -53,6 +53,21 @@ def on_move(event):
         hover_x = event.xdata
         hover_y = event.ydata
 
+def on_key(event):
+    global simulation_started
+    if event.key == ' ':
+        simulation_started = False
+        generate_heatmap()
+
+def generate_heatmap():
+    plt.figure()
+    plt.hist2d(pendulum2_x, pendulum2_y, bins=100, cmap='hot')
+    plt.colorbar()
+    plt.title('Heatmap of Pendulum Positions')
+    plt.xlabel('X position')
+    plt.ylabel('Y position')
+    plt.show()
+
 theta1 = np.pi / 2
 theta2 = np.pi / 2
 omega1 = 0
@@ -79,6 +94,7 @@ hover_line, = ax.plot([], [], 'o-', lw=2, color='lightpink')
 
 fig.canvas.mpl_connect('button_press_event', on_click)
 fig.canvas.mpl_connect('motion_notify_event', on_move)
+fig.canvas.mpl_connect('key_press_event', on_key)
 
 def init():
     line.set_data([], [])
@@ -126,8 +142,6 @@ def animate(i):
 
 ani = FuncAnimation(fig, animate, frames=steps, interval=1, blit=True, init_func=init)
 plt.show()
-
-
 
 
 # https://www.sciencedirect.com/science/article/pii/S1877705816001971
